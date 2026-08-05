@@ -469,10 +469,20 @@ h2 {
     overflow: visible;
   }
 
-  .hero-media { order: 2; min-height: 0; height: auto; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 8px 8px; }
+  .hero::before {
+    position: absolute;
+    z-index: 4;
+    inset: 18px 12px 32px;
+    border: 1px solid var(--line);
+    border-radius: 48% 48% 8px 8px / 8% 8% 8px 8px;
+    content: "";
+    pointer-events: none;
+  }
+
+  .hero-media { order: 2; min-height: 0; height: auto; margin: 12px; overflow: hidden; border: 0; border-radius: 6px; }
   .hero-media::before { display: none; }
   .hero-media img { width: 100%; aspect-ratio: 1.45; object-fit: cover; object-position: 54% center; }
-  .hero-copy-wrap { order: 1; padding: 36px 20px 25px; align-items: flex-start; border: 1px solid var(--line); border-bottom: 0; border-radius: 48% 48% 0 0 / 11% 11% 0 0; }
+  .hero-copy-wrap { order: 1; padding: 36px 20px 25px; align-items: flex-start; border: 0; border-radius: 48% 48% 0 0 / 11% 11% 0 0; }
   .hero-copy-wrap::before { display: none; }
   .hero-copy { width: 100%; padding: 0; text-align: center; }
   .hero-store-name { display: block; margin: 0; color: var(--ink); font-size: 15px; font-weight: 500; letter-spacing: .06em; }
